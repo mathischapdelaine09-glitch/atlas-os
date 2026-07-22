@@ -1,0 +1,32 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  status      String   @default("TODO") // TODO, IN_PROGRESS, COMPLETED
+  createdAt   DateTime @default(now())
+}
+
+model Transaction {
+  id        String   @id @default(uuid())
+  label     String
+  amount    Float
+  type      String   // INCOME, EXPENSE
+  account   String   // CHECKING, SAVINGS
+  date      String
+  createdAt DateTime @default(now())
+}
+
+model Goal {
+  id           String @id @default(uuid())
+  title        String
+  targetAmount Float
+  account      String // CHECKING, SAVINGS
+}
