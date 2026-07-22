@@ -7,13 +7,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Project {
-  id          String   @id @default(uuid())
-  title       String
-  description String?
-  status      String   @default("TODO")
-  createdAt   DateTime @default(now())
-}
+
 
 model Transaction {
   id        String   @id @default(uuid())
@@ -30,4 +24,14 @@ model Goal {
   title        String
   targetAmount Float
   account      String
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  status      String   @default("TODO")
+  color       String   @default("#6366f1")
+  startDate   DateTime?
+  createdAt   DateTime @default(now())
 }
