@@ -1,5 +1,6 @@
 datasource db {
   provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 generator client {
@@ -10,7 +11,7 @@ model Project {
   id          String   @id @default(uuid())
   title       String
   description String?
-  status      String   @default("TODO") // TODO, IN_PROGRESS, COMPLETED
+  status      String   @default("TODO")
   createdAt   DateTime @default(now())
 }
 
@@ -18,8 +19,8 @@ model Transaction {
   id        String   @id @default(uuid())
   label     String
   amount    Float
-  type      String   // INCOME, EXPENSE
-  account   String   // CHECKING, SAVINGS
+  type      String
+  account   String
   date      String
   createdAt DateTime @default(now())
 }
@@ -28,5 +29,5 @@ model Goal {
   id           String @id @default(uuid())
   title        String
   targetAmount Float
-  account      String // CHECKING, SAVINGS
+  account      String
 }
