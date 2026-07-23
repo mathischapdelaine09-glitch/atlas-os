@@ -18,12 +18,12 @@ export function ServiceWorkerRegister() {
         });
 
         console.info(
-          "Service worker AtlasOS enregistré :",
+          "Service worker VeyraOS enregistré :",
           registration.scope
         );
       } catch (error) {
         console.error(
-          "Échec de l’enregistrement du service worker AtlasOS :",
+          "Échec de l’enregistrement du service worker VeyraOS :",
           error
         );
       }

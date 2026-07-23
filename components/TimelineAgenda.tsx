@@ -12,7 +12,7 @@ interface EventItem {
   category: EventCategory;
 }
 
-const STORAGE_KEY = "atlas_events";
+const STORAGE_KEY = "veyra_events";
 
 const initialEvents: EventItem[] = [
   {

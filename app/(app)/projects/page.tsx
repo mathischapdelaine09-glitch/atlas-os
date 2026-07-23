@@ -428,7 +428,7 @@ export default async function ProjectsPage() {
                 name="title"
                 type="text"
                 required
-                placeholder="Ex : Lancer Atlas Calendar"
+                placeholder="Ex : Lancer Veyra Calendar"
                 className={inputClassName}
               />
             </FormField>

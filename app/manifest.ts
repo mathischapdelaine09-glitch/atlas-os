@@ -3,10 +3,10 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "AtlasOS",
-    short_name: "AtlasOS",
+    name: "VeyraOS",
+    short_name: "VeyraOS",
     description:
-      "AtlasOS centralise votre organisation, vos études, vos projets, vos finances, vos documents et vos notes.",
+      "VeyraOS centralise votre organisation, vos études, vos projets, vos finances, vos documents et vos notes.",
 
     start_url: "/",
     scope: "/",

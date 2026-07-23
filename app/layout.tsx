@@ -4,14 +4,14 @@ import { ServiceWorkerRegister } from "@/components/pwa/service-worker-register"
 
 export const metadata: Metadata = {
   title: {
-    default: "AtlasOS",
-    template: "%s | AtlasOS",
+    default: "VeyraOS",
+    template: "%s | VeyraOS",
   },
 
   description:
-    "AtlasOS centralise votre organisation, vos études, vos projets, vos finances, vos documents et vos notes.",
+    "VeyraOS centralise votre organisation, vos études, vos projets, vos finances, vos documents et vos notes.",
 
-  applicationName: "AtlasOS",
+  applicationName: "VeyraOS",
 
   icons: {
     icon: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
   appleWebApp: {
     capable: true,
-    title: "AtlasOS",
+    title: "VeyraOS",
     statusBarStyle: "black-translucent",
   },
 

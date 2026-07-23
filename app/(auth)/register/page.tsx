@@ -108,7 +108,7 @@ export default function RegisterPage() {
             </h1>
 
             <p className="mt-2 text-sm text-slate-400">
-              Crée ton espace personnel AtlasOS.
+              Crée ton espace personnel VeyraOS.
             </p>
           </div>
 

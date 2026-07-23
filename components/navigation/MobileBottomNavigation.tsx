@@ -94,7 +94,7 @@ export default function MobileBottomNavigation() {
           <div className="flex items-start justify-between gap-4 border-b border-slate-800 pb-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
-                AtlasOS
+                VeyraOS
               </p>
 
               <h2 className="mt-1 text-lg font-bold text-white">

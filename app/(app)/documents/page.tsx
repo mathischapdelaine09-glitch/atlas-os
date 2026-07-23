@@ -20,7 +20,7 @@ export interface DocumentItem {
   tags?: string[];
 }
 
-const STORAGE_KEY = "atlas_documents";
+const STORAGE_KEY = "veyra_documents";
 
 const initialDocuments: DocumentItem[] = [
   {
@@ -262,7 +262,7 @@ export default function DocumentsPage() {
         <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
-              AtlasOS Documents
+              Veyra Documents
             </p>
 
             <h1 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">

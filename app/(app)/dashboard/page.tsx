@@ -31,7 +31,7 @@ export default async function DashboardPage() {
     typeof usernameMetadata === "string" &&
     usernameMetadata.trim().length > 0
       ? usernameMetadata.trim()
-      : user.email?.split("@")[0] ?? "Utilisateur Atlas";
+      : user.email?.split("@")[0] ?? "Utilisateur Veyra";
 
   // =======================================================
   // DONNÉES SUPABASE
@@ -304,7 +304,7 @@ export default async function DashboardPage() {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-400 md:text-base">
             Tes projets, tes finances et tes notes sont
             synchronisés avec Supabase et réunis au même endroit
-            dans AtlasOS.
+            dans VeyraOS.
           </p>
 
           <div className="mt-6 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
@@ -667,7 +667,7 @@ export default async function DashboardPage() {
             ) : (
               <EmptyState
                 title="Aucun projet"
-                description="Crée ton premier projet pour commencer à organiser tes objectifs dans AtlasOS."
+                description="Crée ton premier projet pour commencer à organiser tes objectifs dans VeyraOS."
                 href="/projects"
                 actionLabel="Créer un projet"
               />

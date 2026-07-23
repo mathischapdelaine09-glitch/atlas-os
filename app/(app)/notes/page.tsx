@@ -305,7 +305,7 @@ export default async function NotesPage({
       <section className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 p-7 md:p-9">
         <div className="relative z-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
-            AtlasOS Notes
+            Veyra Notes
           </p>
 
           <h1 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">

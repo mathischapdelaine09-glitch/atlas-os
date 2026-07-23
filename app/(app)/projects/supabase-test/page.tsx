@@ -57,7 +57,7 @@ export default function SupabaseProjectsTestPage() {
 
       const newProject = await createProject({
         title,
-        description: "Projet créé depuis la page de test AtlasOS",
+        description: "Projet créé depuis la page de test VeyraOS.",
         status: "not_started",
         priority: "medium",
         progress: 0,
@@ -109,7 +109,7 @@ export default function SupabaseProjectsTestPage() {
           </p>
 
           <h1 className="mt-2 text-4xl font-bold">
-            Projets AtlasOS
+            Projets VeyraOS
           </h1>
 
           <p className="mt-3 text-slate-400">

@@ -9,7 +9,7 @@ export interface Note {
 export const notesStore: Note[] = [
   {
     id: "1",
-    title: "Bienvenue sur AtlasOS Notes",
+    title: "Bienvenue sur Veyra Notes",
     content: "Utilise cet espace pour noter tes idées, objectifs rapides ou mémo importants.",
     category: "Général",
     updatedAt: new Date().toLocaleDateString("fr-FR"),

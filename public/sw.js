@@ -1,4 +1,4 @@
-const CACHE_VERSION = "atlasos-v1";
+const CACHE_VERSION = "veyraos-v1";
 
 self.addEventListener("install", () => {
   self.skipWaiting();

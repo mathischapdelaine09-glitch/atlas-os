@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { InstallAtlasButton } from "@/components/pwa/install-atlas-button";
+import { InstallAtlasButton } from "@/components/pwa/install-veyra-button";
 import LogoutButton from "@/components/auth/LogoutButton";
 import { createClient } from "@/lib/supabase/server";
 import MobileBottomNavigation from "@/components/navigation/MobileBottomNavigation";
@@ -69,7 +69,7 @@ export default async function PrivateLayout({
           </p>
 
           <h1 className="mt-1 text-xl font-black tracking-wider text-indigo-400">
-            ATLAS OS
+            VEYRA OS
           </h1>
         </div>
 
@@ -95,7 +95,7 @@ export default async function PrivateLayout({
   <LogoutButton />
 
   <div className="px-3 text-center text-[10px] uppercase tracking-wider text-slate-600">
-    AtlasOS • Version 1.0
+    VeyraOS • Version 1.1
   </div>
 </div>
       </aside>
@@ -108,7 +108,7 @@ export default async function PrivateLayout({
           </p>
 
           <p className="truncate text-base font-black tracking-wider text-indigo-400">
-            ATLAS OS
+            VeyraOS
           </p>
         </Link>
 

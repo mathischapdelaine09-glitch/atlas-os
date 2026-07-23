@@ -94,7 +94,7 @@ export function InstallAtlasButton() {
       }
     } catch (error) {
       console.error(
-        "Impossible d’ouvrir l’installation AtlasOS :",
+        "Impossible d’ouvrir l’installation VeyraOS :",
         error
       );
     } finally {
@@ -131,7 +131,7 @@ export function InstallAtlasButton() {
         <Download className="h-4 w-4" />
       </span>
 
-      <span>Installer AtlasOS</span>
+      <span>Installer VeyraOS</span>
     </button>
   );
 }

@@ -286,7 +286,7 @@ export default function StudiesPage() {
         <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
-              AtlasOS Études
+              Veyra Études
             </p>
 
             <h1 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">

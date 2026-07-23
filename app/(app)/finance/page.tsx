@@ -396,7 +396,7 @@ export default async function FinancePage() {
 
       <div>
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
-          AtlasOS Finance
+          Veyra Finance
         </p>
 
         <h1 className="break-words text-3xl font-bold sm:text-4xl">

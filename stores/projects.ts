@@ -53,7 +53,7 @@ export const useProjectsStore = create<ProjectsStore>()(
     }),
 
     {
-      name: "atlas-projects",
+      name: "veyra-projects",
     }
   )
 );

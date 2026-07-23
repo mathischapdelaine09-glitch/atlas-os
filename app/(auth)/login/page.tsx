@@ -47,7 +47,7 @@ export default function LoginPage() {
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold text-white">
-            Connexion à AtlasOS
+            Connexion à VeyraOS
           </h1>
 
           <p className="mt-2 text-sm text-slate-400">

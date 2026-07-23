@@ -61,7 +61,7 @@ const claims = error ? null : data?.claims;
   const isAuthenticationRoute =
     pathname === "/login" || pathname === "/register";
 
-  // L'utilisateur n'est pas connecté et tente d'ouvrir AtlasOS
+  // L'utilisateur n'est pas connecté et tente d'ouvrir VeyraOS
   if (!claims && isProtectedRoute) {
     const loginUrl = request.nextUrl.clone();
 
