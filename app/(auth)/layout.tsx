@@ -1,8 +1,14 @@
+import type { ReactNode } from "react";
+
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
 
-export default async function HomePage() {
+export default async function AuthLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const supabase = await createClient();
 
   const { data, error } =
@@ -12,5 +18,9 @@ export default async function HomePage() {
     redirect("/dashboard");
   }
 
-  redirect("/login");
+  return (
+    <main className="min-h-screen bg-slate-950 text-white">
+      {children}
+    </main>
+  );
 }
