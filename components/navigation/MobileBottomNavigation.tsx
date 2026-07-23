@@ -14,6 +14,11 @@ const mainNavigation = [
     icon: "⌂",
   },
   {
+    name: "To-do",
+    href: "/todo",
+    icon: "✓",
+  },
+  {
     name: "Agenda",
     href: "/agenda",
     icon: "◫",
@@ -22,11 +27,6 @@ const mainNavigation = [
     name: "Notes",
     href: "/notes",
     icon: "✎",
-  },
-  {
-    name: "Études",
-    href: "/etudes",
-    icon: "◇",
   },
 ];
 
@@ -48,6 +48,19 @@ const secondaryNavigation = [
     description: "Organisation de tes projets",
     href: "/projects",
     icon: "◆",
+  },
+
+  {
+    name: "Habitudes",
+    description: "Gère tes habitudes et routines",
+    href: "/habits",
+    icon: "☑",
+  },
+  {
+    name: "Études",
+    description: "Cours, révisions et ressources",
+    href: "/etudes",
+    icon: "◇",
   },
 ];
 

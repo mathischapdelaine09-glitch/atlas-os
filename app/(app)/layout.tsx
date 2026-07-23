@@ -14,6 +14,18 @@ const navigation = [
     icon: "⌂",
   },
   {
+    name: "To-do",
+    href: "/todo",
+    icon: "✓",
+  },
+
+  {
+    name: "Habitudes",
+    href: "/habits",
+    icon: "☑",
+  },
+
+  {
     name: "Finance",
     href: "/finance",
     icon: "€",
@@ -73,7 +85,7 @@ export default async function PrivateLayout({
           </h1>
         </div>
 
-        <nav className="mt-6 flex-1 space-y-1 overflow-y-auto">
+        <nav className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {navigation.map((item) => (
             <Link
               key={item.name}
