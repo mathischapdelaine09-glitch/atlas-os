@@ -1,21 +1,67 @@
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
-
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { ServiceWorkerRegister } from "@/components/pwa/service-worker-register";
 
 export const metadata: Metadata = {
-  title: "ATLAS OS",
-  description: "Mon système personnel",
+  title: {
+    default: "AtlasOS",
+    template: "%s | AtlasOS",
+  },
+
+  description:
+    "AtlasOS centralise votre organisation, vos études, vos projets, vos finances, vos documents et vos notes.",
+
+  applicationName: "AtlasOS",
+
+  icons: {
+    icon: [
+      {
+        url: "/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+
+  appleWebApp: {
+    capable: true,
+    title: "AtlasOS",
+    statusBarStyle: "black-translucent",
+  },
+
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#09090b",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="fr">
-      <body className="min-h-screen bg-slate-900 text-slate-100">
+      <body>
+        <ServiceWorkerRegister />
         {children}
       </body>
     </html>

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
-
+import { InstallAtlasButton } from "@/components/pwa/install-atlas-button";
 import LogoutButton from "@/components/auth/LogoutButton";
 import { createClient } from "@/lib/supabase/server";
 import MobileBottomNavigation from "@/components/navigation/MobileBottomNavigation";
@@ -89,13 +89,15 @@ export default async function PrivateLayout({
           ))}
         </nav>
 
-        <div className="space-y-4 border-t border-slate-800 pt-4">
-          <LogoutButton />
+        <div className="space-y-3 border-t border-slate-800 pt-4">
+  <InstallAtlasButton />
 
-          <div className="px-3 text-center text-[10px] uppercase tracking-wider text-slate-600">
-            AtlasOS • Version 1.0
-          </div>
-        </div>
+  <LogoutButton />
+
+  <div className="px-3 text-center text-[10px] uppercase tracking-wider text-slate-600">
+    AtlasOS • Version 1.0
+  </div>
+</div>
       </aside>
 
       {/* EN-TÊTE MOBILE */}
