@@ -391,7 +391,7 @@ export default async function FinancePage() {
     );
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8 p-4 text-white md:p-6">
+    <div className="mx-auto w-full max-w-6xl space-y-6 text-white md:space-y-8">
       {/* EN-TÊTE */}
 
       <div>
@@ -399,7 +399,7 @@ export default async function FinancePage() {
           AtlasOS Finance
         </p>
 
-        <h1 className="text-3xl font-bold">
+        <h1 className="break-words text-3xl font-bold sm:text-4xl">
           Gestion financière
         </h1>
 
@@ -411,15 +411,15 @@ export default async function FinancePage() {
 
       {/* SOLDES */}
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-        <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="min-w-0 rounded-2xl border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6">
           <div className="flex items-center justify-between text-sm text-slate-400">
             <span>Solde total</span>
             <span>💰</span>
           </div>
 
           <p
-            className={`mt-3 text-3xl font-extrabold ${
+            className={`mt-3 break-words text-2xl font-extrabold sm:text-3xl ${
               totalBalance >= 0
                 ? "text-white"
                 : "text-rose-400"
@@ -433,7 +433,7 @@ export default async function FinancePage() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-6">
+        <div className="min-w-0 rounded-2xl border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6">
           <div className="flex items-center justify-between text-sm text-slate-400">
             <span>Compte courant</span>
 
@@ -443,7 +443,7 @@ export default async function FinancePage() {
           </div>
 
           <p
-            className={`mt-3 text-3xl font-extrabold ${
+            className={`mt-3 break-words text-2xl font-extrabold sm:text-3xl ${
               checkingBalance >= 0
                 ? "text-emerald-400"
                 : "text-rose-400"
@@ -457,7 +457,7 @@ export default async function FinancePage() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-700/60 bg-slate-800/60 p-6">
+        <div className="min-w-0 rounded-2xl border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6">
           <div className="flex items-center justify-between text-sm text-slate-400">
             <span>Épargne</span>
 
@@ -467,7 +467,7 @@ export default async function FinancePage() {
           </div>
 
           <p
-            className={`mt-3 text-3xl font-extrabold ${
+            className={`mt-3 break-words text-2xl font-extrabold sm:text-3xl ${
               savingsBalance >= 0
                 ? "text-amber-400"
                 : "text-rose-400"
@@ -485,22 +485,22 @@ export default async function FinancePage() {
       {/* RÉSUMÉ */}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-5">
+        <div className="min-w-0 rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4 sm:p-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-300">
             Revenus enregistrés
           </p>
 
-          <p className="mt-2 text-2xl font-bold text-emerald-400">
+          <p className="mt-2 break-words text-xl font-bold text-emerald-400 sm:text-2xl">
             +{formatCurrency(incomeTotal)}
           </p>
         </div>
 
-        <div className="rounded-2xl border border-rose-500/20 bg-rose-500/10 p-5">
+        <div className="min-w-0 rounded-2xl border border-rose-500/20 bg-rose-500/10 p-4 sm:p-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-rose-300">
             Dépenses enregistrées
           </p>
 
-          <p className="mt-2 text-2xl font-bold text-rose-400">
+          <p className="mt-2 break-words text-xl font-bold text-rose-400 sm:text-2xl">
             -{formatCurrency(expenseTotal)}
           </p>
         </div>
@@ -508,10 +508,10 @@ export default async function FinancePage() {
 
       {/* CONTENU PRINCIPAL */}
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
         {/* AJOUTER UNE TRANSACTION */}
 
-        <section className="h-fit space-y-4 rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6">
+        <section className="h-fit min-w-0 space-y-4 rounded-2xl border border-slate-700/60 bg-slate-800/50 p-4 sm:p-6">
           <div>
             <h2 className="text-lg font-bold">
               Ajouter un mouvement
@@ -587,7 +587,7 @@ export default async function FinancePage() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div>
                 <label
                   htmlFor="transaction-type"
@@ -639,7 +639,7 @@ export default async function FinancePage() {
 
             <button
               type="submit"
-              className="w-full cursor-pointer rounded-xl bg-indigo-600 py-2.5 font-semibold text-white transition hover:bg-indigo-500"
+              className="min-h-11 w-full cursor-pointer rounded-xl bg-indigo-600 px-4 py-2.5 font-semibold text-white transition hover:bg-indigo-500"
             >
               Enregistrer
             </button>
@@ -648,7 +648,7 @@ export default async function FinancePage() {
 
         {/* OBJECTIFS */}
 
-        <section className="h-fit space-y-5 rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6">
+        <section className="h-fit min-w-0 space-y-5 rounded-2xl border border-slate-700/60 bg-slate-800/50 p-4 sm:p-6">
           <div>
             <h2 className="text-lg font-bold">
               Objectifs
@@ -683,7 +683,7 @@ export default async function FinancePage() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div>
                 <label
                   htmlFor="goal-amount"
@@ -731,7 +731,7 @@ export default async function FinancePage() {
 
             <button
               type="submit"
-              className="w-full cursor-pointer rounded-xl bg-amber-600 py-2.5 font-semibold text-white transition hover:bg-amber-500"
+              className="min-h-11 w-full cursor-pointer rounded-xl bg-amber-600 px-4 py-2.5 font-semibold text-white transition hover:bg-amber-500"
             >
               Ajouter l’objectif
             </button>
@@ -793,14 +793,14 @@ export default async function FinancePage() {
                         <button
                           type="submit"
                           aria-label={`Supprimer l’objectif ${goal.title}`}
-                          className="cursor-pointer text-slate-500 transition hover:text-rose-400"
+                          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg text-slate-500 transition hover:bg-rose-500/10 hover:text-rose-400"
                         >
                           ✕
                         </button>
                       </form>
                     </div>
 
-                    <div className="flex justify-between text-[11px] text-slate-400">
+                    <div className="flex flex-col gap-1 text-[11px] text-slate-400 sm:flex-row sm:justify-between">
                       <span>
                         {formatCurrency(
                           currentBalance
@@ -837,7 +837,7 @@ export default async function FinancePage() {
 
         {/* TRANSACTIONS */}
 
-        <section className="space-y-5 rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6">
+        <section className="min-w-0 space-y-5 rounded-2xl border border-slate-700/60 bg-slate-800/50 p-4 sm:p-6">
           <div>
             <h2 className="text-lg font-bold">
               Historique
@@ -849,12 +849,12 @@ export default async function FinancePage() {
             </p>
           </div>
 
-          <div className="max-h-[620px] space-y-2 overflow-y-auto pr-1">
+          <div className="space-y-2 lg:max-h-[620px] lg:overflow-y-auto lg:pr-1">
             {transactions.length > 0 ? (
               transactions.map((transaction) => (
                 <div
                   key={transaction.id}
-                  className="flex items-center justify-between gap-3 rounded-xl border border-slate-700/40 bg-slate-900/50 p-3 text-xs"
+                  className="flex items-start justify-between gap-3 rounded-xl border border-slate-700/40 bg-slate-900/50 p-3 text-xs sm:items-center"
                 >
                   <div className="min-w-0 space-y-1">
                     <p className="truncate font-semibold text-white">
@@ -873,9 +873,9 @@ export default async function FinancePage() {
                     </p>
                   </div>
 
-                  <div className="flex shrink-0 items-center gap-3">
+                  <div className="flex shrink-0 items-center gap-2 sm:gap-3">
                     <span
-                      className={`font-bold ${
+                      className={`max-w-[9rem] break-words text-right font-bold sm:max-w-none ${
                         transaction.type ===
                         "INCOME"
                           ? "text-emerald-400"
@@ -905,7 +905,7 @@ export default async function FinancePage() {
                       <button
                         type="submit"
                         aria-label={`Supprimer la transaction ${transaction.label}`}
-                        className="cursor-pointer text-slate-500 transition hover:text-rose-400"
+                        className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg text-slate-500 transition hover:bg-rose-500/10 hover:text-rose-400"
                       >
                         ✕
                       </button>

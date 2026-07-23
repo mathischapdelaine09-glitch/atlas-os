@@ -366,13 +366,13 @@ export default async function ProjectsPage() {
   );
 
   return (
-    <div className="space-y-8">
+    <div className="w-full space-y-6 md:space-y-8">
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indigo-400">
           Centre de pilotage
         </p>
 
-        <h1 className="mt-2 text-3xl font-black text-white">
+        <h1 className="mt-2 break-words text-3xl font-black text-white sm:text-4xl">
           Mes projets
         </h1>
 
@@ -383,7 +383,7 @@ export default async function ProjectsPage() {
         </p>
       </header>
 
-      <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <section className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         <StatCard
           label="Projets actifs"
           value={activeProjects.length.toString()}
@@ -405,8 +405,8 @@ export default async function ProjectsPage() {
         />
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[330px_minmax(0,1fr)]">
-        <aside className="h-fit rounded-3xl border border-slate-800 bg-slate-950/50 p-5 xl:sticky xl:top-8">
+      <section className="grid gap-6 xl:grid-cols-[330px_minmax(0,1fr)] xl:items-start">
+        <aside className="h-fit min-w-0 rounded-3xl border border-slate-800 bg-slate-950/50 p-4 sm:p-5 xl:sticky xl:top-8">
           <h2 className="text-lg font-bold text-white">
             Nouveau projet
           </h2>
@@ -446,7 +446,7 @@ export default async function ProjectsPage() {
               />
             </FormField>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <FormField
                 label="Statut"
                 htmlFor="project-status"
@@ -525,7 +525,7 @@ export default async function ProjectsPage() {
 
             <button
               type="submit"
-              className="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-indigo-500"
+              className="min-h-11 w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-indigo-500"
             >
               Créer le projet
             </button>
@@ -589,7 +589,7 @@ export default async function ProjectsPage() {
 }
 
 const inputClassName =
-  "w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10";
+  "min-h-11 w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10";
 
 function StatCard({
   label,
@@ -599,12 +599,12 @@ function StatCard({
   value: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+    <div className="min-w-0 rounded-2xl border border-slate-800 bg-slate-950/40 p-3 sm:p-4">
       <p className="text-xs text-slate-500">
         {label}
       </p>
 
-      <p className="mt-2 text-xl font-black text-white">
+      <p className="mt-2 break-words text-lg font-black text-white sm:text-xl">
         {value}
       </p>
     </div>
@@ -659,7 +659,7 @@ function ProjectSection({
 }) {
   return (
     <section>
-      <div className="mb-4 flex items-end justify-between">
+      <div className="mb-4 flex items-start justify-between gap-3 sm:items-end">
         <div>
           <h2 className="text-xl font-bold text-white">
             {title}
@@ -676,7 +676,7 @@ function ProjectSection({
       </div>
 
       {projects.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-slate-800 bg-slate-950/30 py-14 text-center text-sm text-slate-500">
+        <div className="rounded-3xl border border-dashed border-slate-800 bg-slate-950/30 px-4 py-10 text-center text-sm text-slate-500 sm:py-14">
           {emptyText}
         </div>
       ) : (
@@ -720,7 +720,7 @@ function ProjectCard({
   ) => Promise<void>;
 }) {
   return (
-    <article className="rounded-3xl border border-slate-800 bg-slate-950/40 p-5 transition hover:border-slate-700">
+    <article className="min-w-0 rounded-3xl border border-slate-800 bg-slate-950/40 p-4 transition hover:border-slate-700 sm:p-5">
       <div className="flex flex-col gap-5 lg:flex-row lg:justify-between">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap gap-2">
@@ -738,11 +738,11 @@ function ProjectCard({
             )}
           </div>
 
-          <h3 className="mt-4 text-lg font-bold text-white">
+          <h3 className="mt-4 break-words text-lg font-bold text-white">
             {project.title}
           </h3>
 
-          <p className="mt-2 text-sm leading-6 text-slate-400">
+          <p className="mt-2 break-words text-sm leading-6 text-slate-400">
             {project.description ||
               "Aucune description renseignée."}
           </p>
@@ -768,7 +768,7 @@ function ProjectCard({
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-5 text-xs text-slate-500">
+          <div className="mt-4 flex flex-col gap-2 text-xs text-slate-500 sm:flex-row sm:flex-wrap sm:gap-5">
             <span>
               Budget :{" "}
               <strong className="text-slate-300">
@@ -787,10 +787,10 @@ function ProjectCard({
           </div>
         </div>
 
-        <div className="w-full space-y-3 lg:w-56">
+        <div className="w-full min-w-0 space-y-3 lg:w-56 lg:shrink-0">
           <form
             action={updateProgressAction}
-            className="rounded-2xl border border-slate-800 bg-slate-900/50 p-3"
+            className="rounded-2xl border border-slate-800 bg-slate-900/50 p-3 sm:p-4"
           >
             <input
               type="hidden"
@@ -805,7 +805,7 @@ function ProjectCard({
               Avancement
             </label>
 
-            <div className="flex gap-2">
+            <div className="flex min-w-0 gap-2">
               <input
                 id={`progress-${project.id}`}
                 name="progress"
@@ -818,7 +818,7 @@ function ProjectCard({
 
               <button
                 type="submit"
-                className="rounded-lg bg-indigo-600 px-3 text-sm font-bold text-white transition hover:bg-indigo-500"
+                className="min-h-10 shrink-0 rounded-lg bg-indigo-600 px-4 text-sm font-bold text-white transition hover:bg-indigo-500"
               >
                 %
               </button>
@@ -859,7 +859,7 @@ function ProjectCard({
 
             <button
               type="submit"
-              className="w-full rounded-xl bg-slate-800 px-3 py-2 text-xs font-semibold text-slate-300 transition hover:bg-slate-700 hover:text-white"
+              className="min-h-10 w-full rounded-xl bg-slate-800 px-3 py-2 text-xs font-semibold text-slate-300 transition hover:bg-slate-700 hover:text-white"
             >
               Modifier le statut
             </button>
@@ -874,7 +874,7 @@ function ProjectCard({
 
             <button
               type="submit"
-              className="w-full rounded-xl border border-rose-500/20 px-3 py-2 text-xs font-semibold text-rose-400 transition hover:bg-rose-500/10"
+              className="min-h-10 w-full rounded-xl border border-rose-500/20 px-3 py-2 text-xs font-semibold text-rose-400 transition hover:bg-rose-500/10"
             >
               Supprimer
             </button>

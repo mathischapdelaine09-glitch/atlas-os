@@ -284,18 +284,18 @@ export default async function DashboardPage() {
   const greeting = getGreeting();
 
   return (
-    <div className="mx-auto max-w-7xl space-y-8 p-4 text-white md:p-6">
+    <div className="mx-auto w-full max-w-7xl space-y-6 text-white md:space-y-8">
       {/* ===================================================
           HERO
       =================================================== */}
 
-      <section className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 p-7 shadow-2xl md:p-10">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 p-5 shadow-2xl sm:p-7 md:p-10">
         <div className="relative z-10 max-w-3xl">
           <span className="inline-flex rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
             {username}
           </span>
 
-          <h1 className="mt-5 text-3xl font-black tracking-tight md:text-5xl">
+          <h1 className="mt-5 break-words text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
             {greeting},{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-emerald-400 bg-clip-text text-transparent">
               voici ton espace.
@@ -308,24 +308,24 @@ export default async function DashboardPage() {
             dans AtlasOS.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
             <Link
               href="/projects"
-              className="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-500"
+              className="min-h-11 w-full rounded-xl bg-indigo-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-indigo-500 sm:w-auto"
             >
               Voir mes projets
             </Link>
 
             <Link
               href="/finance"
-              className="rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-slate-600 hover:bg-slate-800"
+              className="min-h-11 w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2.5 text-center text-sm font-semibold text-slate-200 transition hover:border-slate-600 hover:bg-slate-800 sm:w-auto"
             >
               Gérer mes finances
             </Link>
 
             <Link
               href="/notes"
-              className="rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-slate-600 hover:bg-slate-800"
+              className="min-h-11 w-full rounded-xl border border-slate-700 bg-slate-900/70 px-4 py-2.5 text-center text-sm font-semibold text-slate-200 transition hover:border-slate-600 hover:bg-slate-800 sm:w-auto"
             >
               Ouvrir mes notes
             </Link>
@@ -341,7 +341,7 @@ export default async function DashboardPage() {
           INDICATEURS PRINCIPAUX
       =================================================== */}
 
-      <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+      <section className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-4">
         <DashboardMetric
           label="Patrimoine total"
           value={formatCurrency(totalBalance)}
@@ -402,8 +402,8 @@ export default async function DashboardPage() {
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         {/* RÉSUMÉ FINANCIER */}
 
-        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6 xl:col-span-2">
-          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-800 pb-5">
+        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-4 sm:p-6 xl:col-span-2">
+          <div className="flex flex-col gap-3 border-b border-slate-800 pb-5 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
                 Finance
@@ -462,7 +462,7 @@ export default async function DashboardPage() {
                   (transaction) => (
                     <div
                       key={transaction.id}
-                      className="flex items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-950/60 p-4 transition hover:border-slate-700"
+                      className="flex items-start justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4 transition hover:border-slate-700 sm:items-center sm:gap-4"
                     >
                       <div className="min-w-0">
                         <p className="truncate text-sm font-semibold text-white">
@@ -482,7 +482,7 @@ export default async function DashboardPage() {
                       </div>
 
                       <span
-                        className={`shrink-0 text-sm font-black ${
+                        className={`shrink-0 break-words text-right text-sm font-black ${
                           transaction.type ===
                           "INCOME"
                             ? "text-emerald-400"
@@ -514,7 +514,7 @@ export default async function DashboardPage() {
 
         {/* OBJECTIF PRINCIPAL */}
 
-        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6">
+        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-4 sm:p-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
               Objectif principal
@@ -538,12 +538,12 @@ export default async function DashboardPage() {
                     : "Basé sur ton compte courant"}
                 </p>
 
-                <div className="mt-6 flex items-end justify-between">
+                <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                   <span className="text-3xl font-black text-amber-400">
                     {goalPercent} %
                   </span>
 
-                  <span className="text-xs text-slate-400">
+                  <span className="break-words text-xs text-slate-400 sm:text-right">
                     {formatCurrency(
                       goalCurrentBalance
                     )}{" "}
@@ -587,8 +587,8 @@ export default async function DashboardPage() {
       =================================================== */}
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-3">
-        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6 xl:col-span-2">
-          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-800 pb-5">
+        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-4 sm:p-6 xl:col-span-2">
+          <div className="flex flex-col gap-3 border-b border-slate-800 pb-5 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-400">
                 Projets
@@ -620,7 +620,7 @@ export default async function DashboardPage() {
                   key={project.id}
                   className="block rounded-2xl border border-slate-800 bg-slate-950/60 p-4 transition hover:border-indigo-500/30 hover:bg-slate-950"
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                     <div className="min-w-0">
                       <p className="truncate font-semibold text-white">
                         {project.title}
@@ -678,7 +678,7 @@ export default async function DashboardPage() {
 
         {/* STATISTIQUES PROJETS */}
 
-        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6">
+        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-4 sm:p-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-violet-400">
               Progression
@@ -726,8 +726,8 @@ export default async function DashboardPage() {
       =================================================== */}
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-3">
-        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6 xl:col-span-2">
-          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-800 pb-5">
+        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-4 sm:p-6 xl:col-span-2">
+          <div className="flex flex-col gap-3 border-b border-slate-800 pb-5 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-violet-400">
                 Notes
@@ -752,14 +752,14 @@ export default async function DashboardPage() {
           </div>
 
           {recentNotes.length > 0 ? (
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {recentNotes.map((note) => (
                 <Link
                   key={note.id}
                   href={`/notes?editId=${note.id}`}
                   className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4 transition hover:border-violet-500/30 hover:bg-slate-950"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
                     <span
                       className={`rounded-full border px-2.5 py-1 text-[10px] font-bold ${getNoteCategoryClasses(
                         note.category
@@ -794,7 +794,7 @@ export default async function DashboardPage() {
           )}
         </div>
 
-        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6">
+        <div className="space-y-5 rounded-3xl border border-slate-700/60 bg-slate-900/60 p-4 sm:p-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-violet-400">
               Mémo rapide
@@ -860,22 +860,22 @@ function DashboardMetric({
   };
 
   return (
-    <div className="rounded-3xl border border-slate-700/60 bg-slate-900/60 p-6 transition hover:border-slate-600">
+    <div className="min-w-0 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-4 transition hover:border-slate-600 sm:rounded-3xl sm:p-6">
       <div className="flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
           {label}
         </p>
 
-        <span className="text-xl">{icon}</span>
+        <span className="shrink-0 text-lg sm:text-xl">{icon}</span>
       </div>
 
       <p
-        className={`mt-4 text-3xl font-black tracking-tight ${toneClasses[tone]}`}
+        className={`mt-3 break-words text-xl font-black tracking-tight sm:mt-4 sm:text-3xl ${toneClasses[tone]}`}
       >
         {value}
       </p>
 
-      <p className="mt-2 text-xs text-slate-500">
+      <p className="mt-2 break-words text-[11px] leading-4 text-slate-500 sm:text-xs">
         {description}
       </p>
     </div>
